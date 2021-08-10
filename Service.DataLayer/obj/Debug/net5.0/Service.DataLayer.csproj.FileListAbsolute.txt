@@ -1,0 +1,12 @@
+D:\Work Course\MVC Core\Database Creation & MVC\Test_Project\SesstionOneTest\Service.DataLayer\bin\Debug\net5.0\appsettings.json
+D:\Work Course\MVC Core\Database Creation & MVC\Test_Project\SesstionOneTest\Service.DataLayer\bin\Debug\net5.0\Service.DataLayer.deps.json
+D:\Work Course\MVC Core\Database Creation & MVC\Test_Project\SesstionOneTest\Service.DataLayer\bin\Debug\net5.0\Service.DataLayer.runtimeconfig.json
+D:\Work Course\MVC Core\Database Creation & MVC\Test_Project\SesstionOneTest\Service.DataLayer\bin\Debug\net5.0\Service.DataLayer.runtimeconfig.dev.json
+D:\Work Course\MVC Core\Database Creation & MVC\Test_Project\SesstionOneTest\Service.DataLayer\bin\Debug\net5.0\Service.DataLayer.dll
+D:\Work Course\MVC Core\Database Creation & MVC\Test_Project\SesstionOneTest\Service.DataLayer\bin\Debug\net5.0\Service.DataLayer.pdb
+D:\Work Course\MVC Core\Database Creation & MVC\Test_Project\SesstionOneTest\Service.DataLayer\obj\Debug\net5.0\Service.DataLayer.AssemblyInfoInputs.cache
+D:\Work Course\MVC Core\Database Creation & MVC\Test_Project\SesstionOneTest\Service.DataLayer\obj\Debug\net5.0\Service.DataLayer.AssemblyInfo.cs
+D:\Work Course\MVC Core\Database Creation & MVC\Test_Project\SesstionOneTest\Service.DataLayer\obj\Debug\net5.0\Service.DataLayer.csproj.CoreCompileInputs.cache
+D:\Work Course\MVC Core\Database Creation & MVC\Test_Project\SesstionOneTest\Service.DataLayer\obj\Debug\net5.0\Service.DataLayer.dll
+D:\Work Course\MVC Core\Database Creation & MVC\Test_Project\SesstionOneTest\Service.DataLayer\obj\Debug\net5.0\Service.DataLayer.pdb
+D:\Work Course\MVC Core\Database Creation & MVC\Test_Project\SesstionOneTest\Service.DataLayer\obj\Debug\net5.0\Service.DataLayer.genruntimeconfig.cache

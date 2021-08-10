@@ -1,0 +1,99 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+
+@{
+    Layout = "~/Views/Shared/_Home.cshtml";
+    ViewBag.Title = "Home Page";
+    if (ViewData["User"] != null)
+    {
+        //ViewBag.user = ViewData["User"];
+        ////ViewBag.logo = viewDataMyObj.OfficePhoto;
+        ////ViewBag.Office_Id = viewDataMyObj.OfficeId;
+    }
+}
+<div class="row">
+    <div class="breadcrumbs-inner">
+        <div class="row m-1">
+            <div class="col-md-12">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-left">
+                            <li class="active"><a href="#">Trainee Management System: Welcome Back</a></li>
+                            @if (ViewData["User"] != null)
+                            {
+                                <li class="active"><a href="#">@ViewData["User"] User</a></li>
+                            }
+                            @*else
+                                {
+                                    <li class="active"><a href="#">Admin</a></li>
+                                }*@
+                            @*<li class="active">Show All</li>*@
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <br />
+    @if (SignInManager.Context.User.IsInRole("Admin"))
+    {
+        <div class="col-lg-3 col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="stat-widget-five">
+                        <div class="stat-icon dib flat-color-4">
+                            <i class="pe-7s-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="text-left dib">
+                                @if (ViewBag.countAll != null)
+                                {
+                                    <div class="stat-text"><span class="count">@ViewBag.countAll</span></div>
+                                }
+                                else
+                                {
+                                    <div class="stat-text"><span class="count">0</span></div>
+                                }
+
+                                <div class="stat-heading">Employees</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="stat-widget-five">
+                        <div class="stat-icon dib flat-color-1">
+                            <i class="pe-7s-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="text-left dib">
+
+                                @if (ViewBag.countAllEvaluated != null)
+                                {
+                                    <div class="stat-text"><span class="count">@ViewBag.countAllEvaluated</span></div>
+                                }
+                                else
+                                {
+                                    <div class="stat-text"><span class="count">0</span></div>
+                                }
+
+                                <div class="stat-heading">Done Evaluation</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<div class="clearfix"></div>
+
