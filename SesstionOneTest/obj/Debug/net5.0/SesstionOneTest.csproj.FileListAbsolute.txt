@@ -145,6 +145,11 @@ D:\Work Course\MVC Core\Database Creation & MVC\Test_Project\SesstionOneTest\Ses
 D:\Work Course\MVC Core\Database Creation & MVC\Test_Project\SesstionOneTest\SesstionOneTest\obj\Debug\net5.0\SesstionOneTest.TagHelpers.output.cache
 D:\Work Course\MVC Core\Database Creation & MVC\Test_Project\SesstionOneTest\SesstionOneTest\obj\Debug\net5.0\SesstionOneTest.RazorCoreGenerate.cache
 D:\Work Course\MVC Core\Database Creation & MVC\Test_Project\SesstionOneTest\SesstionOneTest\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
+D:\Work Course\MVC Core\Database Creation & MVC\Test_Project\SesstionOneTest\SesstionOneTest\obj\Debug\net5.0\Razor\Views\Account\Register.cshtml.g.cs
+D:\Work Course\MVC Core\Database Creation & MVC\Test_Project\SesstionOneTest\SesstionOneTest\obj\Debug\net5.0\Razor\Views\Admin\CreateRole.cshtml.g.cs
+D:\Work Course\MVC Core\Database Creation & MVC\Test_Project\SesstionOneTest\SesstionOneTest\obj\Debug\net5.0\Razor\Views\Admin\EditRole.cshtml.g.cs
+D:\Work Course\MVC Core\Database Creation & MVC\Test_Project\SesstionOneTest\SesstionOneTest\obj\Debug\net5.0\Razor\Views\Admin\EditUsersInRole.cshtml.g.cs
+D:\Work Course\MVC Core\Database Creation & MVC\Test_Project\SesstionOneTest\SesstionOneTest\obj\Debug\net5.0\Razor\Views\Admin\ListRoles.cshtml.g.cs
 D:\Work Course\MVC Core\Database Creation & MVC\Test_Project\SesstionOneTest\SesstionOneTest\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 D:\Work Course\MVC Core\Database Creation & MVC\Test_Project\SesstionOneTest\SesstionOneTest\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 D:\Work Course\MVC Core\Database Creation & MVC\Test_Project\SesstionOneTest\SesstionOneTest\obj\Debug\net5.0\Razor\Views\MainHome\Index.cshtml.g.cs
