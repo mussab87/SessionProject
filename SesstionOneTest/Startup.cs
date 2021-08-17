@@ -12,6 +12,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Service.DataLayer.Models;
+using Service.DataLayer.Repository;
+using Service.DataLayer.TraineeModels;
 
 namespace SesstionOneTest
 {
@@ -29,19 +31,17 @@ namespace SesstionOneTest
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddDbContext<TraineeContext>((serviceProvider, optionsBuilder) =>
-            //{
-            //    optionsBuilder.UseSqlServer(_config.GetConnectionString("ServiceDBConnection"));
-            //    //optionsBuilder.UseSqlServer(DatabaseConn);
-            //    optionsBuilder.UseInternalServiceProvider(serviceProvider);
-            //});
+            services.AddEntityFrameworkSqlServer();
+
+            services.AddDbContext<TraineeDbContext>((serviceProvider, optionsBuilder) =>
+            {
+                optionsBuilder.UseSqlServer(_config.GetConnectionString("ServiceDBConnection"));               
+                optionsBuilder.UseInternalServiceProvider(serviceProvider);
+            });
 
             services.AddDbContextPool<AppDbContext>(
             //options => options.UseSqlServer(DatabaseConn));
-            options => options.UseSqlServer(_config.GetConnectionString("ServiceDBConnection")));
-
-            //services.AddDbContextPool<EmployeeContext>(
-            //options => options.UseSqlServer(_config.GetConnectionString("ServiceDBConnection")));
+            options => options.UseSqlServer(_config.GetConnectionString("ServiceDBConnection")));            
 
             services.AddIdentity<IdentityUser, IdentityRole>().
                 AddEntityFrameworkStores<AppDbContext>();
@@ -52,6 +52,10 @@ namespace SesstionOneTest
                                 .Build();
                 config.Filters.Add(new AuthorizeFilter(policy));
             });
+
+            services.AddControllers();
+            services.AddTransient<ITraineeRepository, SQLTraineeRepository>();
+
             services.AddControllersWithViews();
         }
 

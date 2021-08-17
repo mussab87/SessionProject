@@ -1,0 +1,84 @@
+﻿
+@model Service.DataLayer.ViewModels.TraineeCourseViewModel
+
+@{
+    Layout = "~/Views/Shared/_Home.cshtml";
+    ViewBag.Title = "View All";
+
+}
+
+<hr />
+<div class="row">
+    <div class="col-lg-10">
+        <form enctype="multipart/form-data" asp-action="AddTrainee" method="post" novalidate="novalidate">
+            <div class="card">
+                <div class="card-header">
+                    <strong>Add New</strong> Trainee
+                </div>
+                <div class="card-body card-block">
+                    @*<input type="hidden" asp-for="OfficeId" value="@ViewBag.officeId" />*@
+                    <div asp-validation-summary="All" class="text-danger"></div>
+
+                    <div class="form-group">
+                        <div class="col col-md-3"><label asp-for="Trainee.TraineeName" class="form-control-label"></label></div>
+                        <div class="col-12 col-md-9">
+                            <input asp-for="Trainee.TraineeName" class="form-control" required />
+                            <span asp-validation-for="Trainee.TraineeName" class="text-danger"></span>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <div class="col col-md-3"><label asp-for="Trainee.PhoneNumber" class="form-control-label"></label></div>
+                        <div class="col-12 col-md-9">
+                            <input asp-for="Trainee.PhoneNumber" class="form-control" type="number" required />
+                            <span asp-validation-for="Trainee.PhoneNumber" class="text-danger"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col col-md-3"><label asp-for="Trainee.TraineeNationalId" class="form-control-label"></label></div>
+                        <div class="col-12 col-md-9">
+                            <input asp-for="Trainee.TraineeNationalId" class="form-control" required />
+                            <span asp-validation-for="Trainee.TraineeNationalId" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col col-md-3"><label asp-for="Course.CourseId" class="form-control-label"></label></div>
+                        <div class="col-12 col-md-9">
+                            <select asp-for="Course.CourseId" class="form-control" asp-items="@(new SelectList(ViewBag.ListofCourses, "CourseId", "CourseNameArabic"))" required>
+                                <option value="">Please Select Course</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-12 col-md-9">
+                            <button type="submit" class="btn btn-outline-info btn-sm">
+                                <i class="fa fa-dot-circle-o"></i>Submit
+                            </button>
+                            <button type="reset" class="btn btn-danger btn-sm">
+                                <i class="fa fa-ban"></i> Reset
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            @section Scripts {
+                <script>
+                    $(document).ready(function () {
+                        $('.custom-file-input').on("change", function () {
+                            var fileName = $(this).val().split("\\").pop();
+                            $(this).next('.custom-file-label').html(fileName);
+                        });
+                    });
+                </script>
+                @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+            }
+        </form>
+    </div>
+</div>

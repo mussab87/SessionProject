@@ -1,0 +1,52 @@
+﻿@model Service.DataLayer.ViewModels.AddCourseViewModel
+@{
+    Layout = "~/Views/Shared/_Home.cshtml";
+    ViewBag.Title = "Add Course";
+}
+
+<br />
+<div class="row">
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <strong class="card-title">Add Course</strong>
+            </div>
+            <div class="card-body">
+                <!-- Credit Card -->
+                <div id="pay-invoice">
+                    <div class="card-body">
+
+
+                        <form asp-action="AddCourse" method="post" class="mt-3" novalidate="novalidate">
+
+                            <div asp-validation-summary="All" class="text-danger"></div>
+                            <div class="form-group has-success">
+                                <label asp-for="CourseNameArabic" class="control-label mb-1"></label>
+                                <input asp-for="CourseNameArabic" type="text" class="form-control cc-name valid" placeholder="Course Name Arabic">
+                                <span asp-validation-for="CourseNameArabic" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group has-success">
+                                <label asp-for="CourseNameEnglish" class="control-label mb-1"></label>
+                                <input asp-for="CourseNameEnglish" type="text" class="form-control cc-name valid" placeholder="Course Name English">
+                                <span asp-validation-for="CourseNameEnglish" class="text-danger"></span>
+                            </div>
+
+
+                            <div>
+
+                                <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+                                    <i class="fa fa-lock fa-lg"></i>&nbsp;
+                                    <span id="payment-button-amount">Add Course</span>
+                                    <span id="payment-button-sending" style="display:none;">Sending…</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

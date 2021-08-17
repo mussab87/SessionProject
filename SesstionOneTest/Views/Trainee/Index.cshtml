@@ -1,0 +1,144 @@
+﻿
+@model IEnumerable<Service.DataLayer.ViewModels.ViewAllViewModel>
+
+@{
+    Layout = "~/Views/Shared/_Home.cshtml";
+    ViewBag.Title = "View All";
+
+}
+
+<link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
+<script type="text/javascript"
+        src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+<div class="breadcrumbs-inner">
+    <div class="row m-0">
+
+        <div class="col-sm-8">
+            <div class="page-header float-left">
+                <div class="page-title">
+                    <ol class="breadcrumb text-left">
+                        <li><a href="#">Dashboard</a></li>
+                        <li><a href="#">Trainee</a></li>
+                        <li class="active">Show All</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <strong class="card-title">All Trainees</strong>
+            </div>
+            <div class="card-body">
+                @if (ViewBag.Empty != "yes")
+                {
+                    int count = 0;
+                    <table id="tableShow" class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th hidden>TraineeId</th>
+                                <th hidden>TraineeTrsId</th>
+                                <th hidden>CourseId</th>
+
+                                <th>Trainee Name</th>
+                                <th>Trainee National Id</th>
+                                <th>Phone Number</th>
+                                <th>Created By</th>
+                                <th>Create Date</th>
+                                <th>Course Arabic</th>
+                                <th>Course English</th>
+                                <th></th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var trainee in Model)
+                            {
+                                count = count + 1;
+                                <tr>
+                                    <td>@count</td>
+                                    <td hidden>@trainee.TraineeId</td>
+                                    <td hidden>@trainee.TraineeTrsId</td>
+                                    <td hidden>@trainee.CourseId</td>
+                                    <td>@trainee.TraineeName</td>
+                                    <td>@trainee.TraineeNationalId</td>
+                                    <td>@trainee.PhoneNumber</td>
+                                    <td>@trainee.CreatedBy</td>
+                                    <td>@trainee.CreateStamp</td>
+
+                                    @* course *@
+                                    <td>@trainee.CourseNameArabic</td>
+                                    <td>@trainee.CourseNameEnglish</td>
+                                    <td>
+                                        @*  button *@
+                                        <a asp-controller="Trainee" asp-action="UpdateTrainee" asp-route-TraineeId="@trainee.TraineeId" onclick="return confirm('Are you sure you want to Update this Trainee?')"><i class="fa fa-edit"></i></a>
+                                        @*<button class="btn btn-outline-info btn-sm" asp-controller="Worker" asp-action="EvaluateEmp" asp-route-id="@worker.WorkerId" asp-route-userID="@worker.UserId" onclick="return confirm('Are you sure you want to Evaluate this Employee?')">
+                                                <i class="fa fa-bar-chart"></i>Evaluate
+                                            </button>*@
+                                    </td>
+                                    <td>
+                                        
+                                        <a asp-controller="Trainee" asp-action="DeleteTrainee" asp-route-TraineeId="@trainee.TraineeId" asp-route-TraineeTrsId="@trainee.TraineeTrsId" onclick="return confirm('Are you sure you want to Delete this Employee?')">
+                                            <i class="fa fa-trash"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+
+
+                            }
+                        </tbody>
+                    </table>
+                }
+                else
+                {
+                    <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th><h4>No Trainee have been inserted...</h4></th>
+
+                            </tr>
+                        </thead>
+
+                    </table>
+                }
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="~/green2/assets/js/lib/data-table/datatables.min.js"></script>
+<script src="~/green2/assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
+<script src="~/green2/assets/js/lib/data-table/dataTables.buttons.min.js"></script>
+<script src="~/green2/assets/js/lib/data-table/buttons.bootstrap.min.js"></script>
+<script src="~/green2/assets/js/lib/data-table/jszip.min.js"></script>
+<script src="~/green2/assets/js/lib/data-table/vfs_fonts.js"></script>
+<script src="~/green2/assets/js/lib/data-table/buttons.html5.min.js"></script>
+<script src="~/green2/assets/js/lib/data-table/buttons.print.min.js"></script>
+<script src="~/green2/assets/js/lib/data-table/buttons.colVis.min.js"></script>
+<script src="~/green2/assets/js/init/datatables-init.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#tableShow').DataTable();
+    });
+
+    $(document).ready(function () {
+        $('#bootstrap-data-table').DataTable();
+    });
+</script>
+
+<hr />
+
+
+
+
+
